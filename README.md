@@ -53,3 +53,6 @@ All commands are run from the root of the project, from a terminal:
 
 Feel free to check [our documentation](https://docs.astro.build) or jump into our [Discord server](https://astro.build/chat).
 # portfolio-nicolas
+
+![Description de l'image](https://res.cloudinary.com/dlhnbkqf9/image/upload/v1736714975/portfolio-screen_fm89nn.png)
+
