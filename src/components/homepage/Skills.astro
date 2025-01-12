@@ -1,0 +1,220 @@
+---
+const skills = [
+	{
+		img: {
+			src: "/skills/astro-mono.svg",
+			alt: "Logo d'Astro.js en vert pin foncé"
+		},
+		imgRvb: {
+			src: "/skills/astro-couleur.svg",
+			alt: "Logo d'Astro.js dans sa couleur originale"
+		},
+		text: "Astro"
+	},
+	{
+		img: {
+			src: "/skills/react-mono.svg",
+			alt: "Logo de React en vert pin foncé"
+		},
+		imgRvb: {
+			src: "/skills/react-couleur.svg",
+			alt: "Logo de React dans sa couleur originale"
+		},
+		text: "React"
+	},
+	{
+		img: {
+			src: "/skills/redux-mono.svg",
+			alt: "Logo de Redux en vert pin foncé"
+		},
+		imgRvb: {
+			src: "/skills/redux-couleur.svg",
+			alt: "Logo de Redux dans sa couleur originale"
+		},
+		text: "Redux"
+	},
+
+	{
+		img: {
+			src: "/skills/gsap-mono.svg",
+			alt: "Logo de GreenSock Animation Platform en vert pin foncé"
+		},
+		imgRvb: {
+			src: "/skills/gsap-couleur.svg",
+			alt: "Logo de GreenSock Animation Platform dans sa couleur originale"
+		},
+		text: "GSAP"
+	},
+	{
+		img: {
+			src: "/skills/html-mono.svg",
+			alt: "Logo de HTML5 en vert pin foncé"
+		},
+		imgRvb: {
+			src: "/skills/html-couleur.svg",
+			alt: "Logo de HTML5 dans sa couleur originale"
+		},
+		text: "HTML"
+	},
+	{
+		img: {
+			src: "/skills/css-mono.svg",
+			alt: "Logo de CSS3 en vert pin foncé"
+		},
+		imgRvb: {
+			src: "/skills/css-couleur.svg",
+			alt: "Logo de CSS3 dans sa couleur originale"
+		},
+		text: "CSS"
+	},
+	{
+		img: {
+			src: "/skills/sass-mono.svg",
+			alt: "Logo de Sass en vert pin foncé"
+		},
+		imgRvb: {
+			src: "/skills/sass-couleur.svg",
+			alt: "Logo de Sass dans sa couleur originale"
+		},
+		text: "SASS"
+	},
+	{
+		img: {
+			src: "/skills/javascript-mono.svg",
+			alt: "Logo de Javascript en vert pin foncé"
+		},
+		imgRvb: {
+			src: "/skills/javascript-couleur.svg",
+			alt: "Logo de Javacript dans sa couleur originale"
+		},
+		text: "Javascript"
+	},
+	{
+		img: {
+			src: "/skills/wordpress-mono.svg",
+			alt: "Logo de Wordpress en vert pin foncé"
+		},
+		imgRvb: {
+			src: "/skills/wordpress-couleur.svg",
+			alt: "Logo de Wordpress dans sa couleur originale"
+		},
+		text: "Wordpress"
+	},
+	{
+		img: {
+			src: "/skills/shopify-mono.svg",
+			alt: "Logo de Shopify en vert pin foncé"
+		},
+		imgRvb: {
+			src: "/skills/shopify-couleur.svg",
+			alt: "Logo de Sopify dans sa couleur originale"
+		},
+		text: "Shopify"
+	},
+	{
+		img: {
+			src: "/skills/elementor-mono.svg",
+			alt: "Logo d'Elementor en vert pin foncé"
+		},
+		imgRvb: {
+			src: "/skills/elementor-couleur.svg",
+			alt: "Logo d'Elementor dans sa couleur originale"
+		},
+		text: "Elementor"
+	},
+	{
+		img: {
+			src: "/skills/tailwind-mono.svg",
+			alt: "Logo de Tailwind en vert pin foncé"
+		},
+		imgRvb: {
+			src: "/skills/tailwind-couleur.svg",
+			alt: "Logo de Tailwind dans sa couleur originale"
+		},
+		text: "Tailwind"
+	},
+	{
+		img: {
+			src: "/skills/typescript-mono.svg",
+			alt: "Logo de Typescript en vert pin foncé"
+		},
+		imgRvb: {
+			src: "/skills/typescript-couleur.svg",
+			alt: "Logo de Typescript dans sa couleur originale"
+		},
+		text: "Typescript"
+	}
+];
+---
+
+<section class="skills flex flex-col justify-center overflow-hidden bg-fantasy-50 p-4 pt-16 md:px-10 lg:pt-20">
+	<div class="overflow-hidden">
+		<h2
+			class="relative w-fit translate-y-full self-end text-end font-primary text-5xl text-firefly-900 lg:h-1/5 lg:self-start lg:text-start lg:text-7xl xl:text-8xl"
+		>
+			J'ai travaillé avec
+		</h2>
+	</div>
+
+	<div class="mt-20 flex w-full flex-row flex-wrap justify-between self-start lg:h-4/5">
+		<div class="mx-auto flex w-full max-w-3xl flex-row flex-wrap justify-between gap-y-4">
+			{
+				skills.map((skill) => (
+					<div class="h-fit w-1/3 lg:w-1/4">
+						<div class="skill mx-auto h-28 w-fit overflow-hidden pb-6 opacity-5">
+							<img
+								class="relative mx-auto mb-8 h-20 w-20 object-contain object-center"
+								src={skill.img.src}
+								alt={skill.img.alt}
+							/>
+							<div class="img-couleur mx-auto flex h-28 w-full flex-col items-center justify-between">
+								<img
+									class="relative mx-auto h-20 w-20 object-contain object-center"
+									src={skill.imgRvb.src}
+									alt={skill.imgRvb.alt}
+								/>
+								<span class="inline-block w-full text-center font-bebas text-base lowercase">{skill.text}</span>
+							</div>
+						</div>
+					</div>
+				))
+			}
+		</div>
+	</div>
+</section>
+<style>
+	@media screen and (min-width: 1024px) {
+		.skill > img,
+		.skill .img-couleur {
+			transition: all 0.7s;
+		}
+		.skill:hover > img {
+			transform: translateY(-100%);
+		}
+		.skill:hover .img-couleur {
+			transform: translateY(-100%);
+		}
+	}
+</style>
+<script>
+	import gsap from "gsap";
+	import { ScrollTrigger } from "gsap/src/ScrollTrigger";
+	gsap.registerPlugin(ScrollTrigger);
+	let tl = gsap.timeline({
+		scrollTrigger: {
+			trigger: ".skills",
+			start: "top 50%"
+		}
+	});
+	tl.to("h2", { translateY: 0, duration: 1 });
+	tl.to(".skill", {
+		opacity: 1,
+		duration: 1.25,
+		stagger: {
+			from: "random",
+			ease: "none",
+			amount: 2,
+			each: 2
+		}
+	});
+</script>

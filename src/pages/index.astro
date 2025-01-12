@@ -1,0 +1,43 @@
+---
+import Layout from "../layouts/Layout.astro";
+import Maillage from "../components/homepage/Maillage.astro";
+import Skills from "../components/homepage/Skills.astro";
+import Hero from "../components/homepage/Hero.astro";
+import AboutMe from "../components/homepage/AboutMe.astro";
+
+const title = "Développeur full stack | Portfolio Nicolas Huang";
+const metaDescription =
+	"Bienvenue sur le portfolio de Nicolas HUANG. Un aperçu de mon univers de développeur front-end : projets, formation et compétences, réunis dans ce portfolio dédié au web.";
+
+const menuLinks = [
+	{
+		text: "accueil",
+		url: "/",
+		transition: true
+	},
+	{
+		text: "projets",
+		url: "/projets",
+		transition: true
+	},
+	{
+		text: "à propos",
+		url: "#a-propos",
+		transition: false
+	},
+	{
+		text: "contact",
+		url: "#contact",
+		transition: false
+	}
+];
+---
+
+<Layout menuLinks={menuLinks} title={title} textureFooter={false} metaDescription={metaDescription}>
+	<main>
+		<Hero />
+		<AboutMe />
+		<Maillage text="voir mes projets" link="/projets" />
+		<Skills />
+	</main>
+</Layout>

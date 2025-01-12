@@ -1,0 +1,112 @@
+[
+	{
+		"name": "Norway",
+		"link": "https://norway-trip.netlify.app/",
+		"type": "Perso",
+		"year": 2024,
+		"description": "Norway, un site moderne pour organiser un voyage en norvège",
+		"image": {
+			"src": "/projets/norway.webp",
+			"alt": "Capture d'écran du site web de Norway avec un design moderne"
+		},
+		"imageMobile": {
+			"src": "/projets/norway-mobile.webp",
+			"alt": "Capture d'écran du site web de Norway avec un design moderne"
+		}
+	},
+	{
+		"name": "Template",
+		"link": "https://animated-template-site.netlify.app/",
+		"type": "Perso",
+		"year": 2024,
+		"description": "Un template pour un site responsive et un design moderne.",
+		"image": {
+			"src": "/projets/template.webp",
+			"alt": "Capture d'écran d'un template avec un design moderne"
+		},
+		"imageMobile": {
+			"src": "/projets/template-mobile.webp",
+			"alt": "Capture d'écran d'un template avec un design moderne"
+		}
+	},
+	{
+		"name": "Freshly Restaurant",
+		"link": "https://freshlyrestaurant-newyork.netlify.app/",
+		"type": "Perso",
+		"year": 2024,
+		"description": "Développement d'un site web d'un restaurant new yorkais",
+		"image": {
+			"src": "/projets/freshlyrestaurant.webp",
+			"alt": "Capture d'écran du site web de Freshly restaurant avec un design moderne et coloré"
+		},
+		"imageMobile": {
+			"src": "/projets/freshlyrestaurant-mobile.webp",
+			"alt": "Capture d'écran du site web de Freshly restaurant avec un design moderne et coloré"
+		}
+	},
+	{
+		"name": "Insta link",
+		"link": "https://cloud-insta-link.netlify.app/",
+		"type": "Perso",
+		"year": 2024,
+		"description": "Développement d'un site web moderne et animé pour développer le réseau instagram",
+		"image": {
+			"src": "/projets/instalink.webp",
+			"alt": "Capture d'écran du site web du instalink avec un design élégant et raffiné"
+		},
+		"imageMobile": {
+			"src": "/projets/instalink-mobile.webp",
+			"alt": "Capture d'écran du site web du instalink avec un design élégant et raffiné"
+		}
+	},
+	{
+		"name": "OhMyFood",
+		"link": "https://github.com/hNnicolas/ohmyfood",
+		"type": "Ecole",
+		"year": 2024,
+		"description": "Intégrer une maquette en mobile-first et implémenter des animations avec SASS, sur la base d'une maquette Figma.",
+		"image": {
+			"src": "/projets/ohmyfood.webp",
+			"alt": "Capture d'écran du site web Ohmyfood avec un design coloré et vue sur une carte de restaurant"
+		},
+		"imageMobile": {
+			"src": "/projets/ohmyfood-mobile.webp",
+			"alt": "Capture d'écran du site web Ohmyfood avec un design coloré et vue sur une carte de restaurant"
+		},
+		"technologies": "HTML, Sass"
+	},
+	{
+		"name": "Kasa",
+		"link": "https://github.com/hNnicolas/kasa",
+		"linkIsRepo": true,
+		"type": "Ecole",
+		"year": 2024,
+		"description": "Implémenter le front-end de cette application de location de logements, le tout de façon responsive.",
+		"image": {
+			"src": "/projets/kasa.webp",
+			"alt": "Capture d'écran du site web Kasa"
+		},
+		"imageMobile": {
+			"src": "/projets/kasa-mobile.webp",
+			"alt": "Capture d'écran du site web Kasa"
+		},
+		"technologies": "React"
+	},
+	{
+		"name": "Sophie Bluel",
+		"link": "https://github.com/hNnicolas/Sophie-Bluel",
+		"linkIsRepo": true,
+		"type": "Ecole",
+		"year": 2024,
+		"description": "Rendre le site web de cette architecte d'intérieur dynamique et fonctionnel.",
+		"image": {
+			"src": "/projets/sophie-bluel.webp",
+			"alt": "Capture d'écran du site web de la photographe Sophie Bluel"
+		},
+		"imageMobile": {
+			"src": "/projets/sophie-bluel-mobile.webp",
+			"alt": "Capture d'écran du site web de la photographe Sophie Bluel"
+		},
+		"technologies": "HTML, CSS, JavaScript"
+	}
+]

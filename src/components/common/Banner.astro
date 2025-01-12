@@ -1,0 +1,42 @@
+---
+interface Props {
+	title: string;
+	h1: string;
+}
+const { title, h1 } = Astro.props;
+---
+
+<section class="banner h-fit bg-fantasy-50 bg-texture">
+	<div class="flex h-[30vh] flex-col items-center justify-end overflow-hidden bg-firefly-900 bg-texture lg:h-[40vh]">
+		<h1 class="mb-14 text-lg text-fantasy-50 opacity-0 md:mb-10 lg:mb-16">{h1}</h1>
+		<p class="banner-title relative z-10 translate-y-[110%] font-primary uppercase text-fantasy-50">
+			{title}.
+		</p>
+	</div>
+</section>
+<style lang="postcss" is:global>
+.banner .banner-title {
+	font-size: 20vw;
+	line-height: 0.67;
+}
+
+@media screen and (min-width: 1280px) {
+	.banner .banner-title {
+		font-size: 15vw;
+	}
+}
+</style>
+<script>
+	import gsap from "gsap";
+	import { ScrollTrigger } from "gsap/src/ScrollTrigger";
+	gsap.registerPlugin(ScrollTrigger);
+
+	let tl = gsap.timeline({
+		scrollTrigger: {
+			trigger: ".banner",
+			start: "top 5%"
+		}
+	});
+	tl.to(".banner .banner-title", { translateY: 0, duration: 1, delay: 3.5 });
+	tl.to(".banner h1", { opacity: 1, duration: 1 });
+</script>

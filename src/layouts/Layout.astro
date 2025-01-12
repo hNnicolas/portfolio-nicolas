@@ -1,0 +1,177 @@
+---
+import "/src/assets/fonts/stylesheet.css";
+import Menu from "../components/common/Menu.astro";
+import Footer from "../components/common/Footer.astro";
+
+interface Props {
+	title: string;
+	textureFooter: boolean;
+	menuLinks: any;
+	metaDescription: string;
+}
+
+const { title, textureFooter, menuLinks, metaDescription } = Astro.props;
+---
+
+<!doctype html>
+<html lang="fr">
+	<head>
+		<link rel="icon" type="image/png" href="https://res.cloudinary.com/dlhnbkqf9/image/upload/v1736712956/Nicolas_3_nmqmft.png" />
+		<link rel="sitemap" href="/sitemap-index.xml" />
+		<meta charset="UTF-8" />
+		<meta name="google-site-verification" content="HlsAuTX-AErMCVMNVhTh79ELFeYgcUuPg0tmAwd7mOc" />
+		<meta name="generator" content={Astro.generator} />
+		<meta name="viewport" content="width=device-width" />
+		<title>{title}</title>
+
+		<!-- DONNÉES STRUCTUREES -->
+		<script type="application/ld+json">
+			{
+				"@context": "https://schema.org",
+				"@type": "Person",
+				"name": "Nicolas Huang",
+				"jobTitle": "Développeur full stack",
+				<meta property="og:image" content="https://res.cloudinary.com/dlhnbkqf9/image/upload/v1736712956/Nicolas_3_nmqmft.png" />
+				"url": "https://nicolas-huang.netlify.app/",
+				"email": "mailto:huang.nicola@gmail.com",
+				"nationality": "Française",
+				"sameAs": ["https://www.linkedin.com/in/huang-nicolas/", "https://github.com/hNnicolas"]
+			}
+		</script>
+
+		<!-- META TAGS -->
+		<meta name="description" content={metaDescription} />
+		<meta name="title" content={title} />
+
+		<!-- OPEN GRAPH FACEBOOK -->
+		<meta property="og:title" content="Portfolio Nicolas Huang/>
+		<meta property="og:url" content="https://nicolas-huang.netlify.app/" />
+		<meta property="og:image" content="https://res.cloudinary.com/dlhnbkqf9/image/upload/v1736714975/portfolio-screen_fm89nn.png" />
+		<meta
+			property="og:description"
+			content="Découvrez un aperçu de mon univers de développeur front-end: projets, formation et compétences, réunis dans ce portfolio dédié au web."
+		/>
+		<meta property="og:site_name" content="Nicolas Huang| Développeur full stack" />
+		<meta property="og:type" content="website" />
+
+		<!-- X CARDS OPEN GRAPH  -->
+		<meta name="X:card" content="summary_large_image" />
+		<meta name="X:url" content="https://nicolas-huang.netlify.app/" />
+		<meta name="X:title" content="Portfolio Nicolas Huang" />
+		<meta
+			name="X:description"
+			content="Découvrez un aperçu de mon univers de développeur front-end: projets, formation et compétences, réunis dans ce portfolio dédié au web."
+		/>
+		<meta name="X:image:src" content="https://res.cloudinary.com/dlhnbkqf9/image/upload/v1736714975/portfolio-screen_fm89nn.png" />
+	</head>
+	<body class="relative bg-firefly-900">
+		<div
+			id="transition-wrapper"
+			class="fixed left-0 top-0 z-[99] flex h-screen w-full items-center justify-center border-b-2 border-fantasy-50 bg-firefly-900"
+		>
+			<img
+    role="img"
+    aria-labelledby="logoTitle logoDesc"
+    id="logo"
+    class="mx-auto w-52 opacity-0 lg:w-72"
+    src="https://res.cloudinary.com/dlhnbkqf9/image/upload/v1736712956/Nicolas_3_nmqmft.png"
+    alt="Logo de Nicolas HUANG"
+/>
+
+		</div>
+		<Menu menuLinks={menuLinks} />
+		<slot />
+		<Footer textureFooter={textureFooter} />
+	</body>
+</html>
+<style is:global lang="postcss">
+html {
+	scroll-behavior: smooth;
+}
+
+body * {
+  @apply font-content font-light lg:text-xl tracking-[1px];
+  /* line-height: normal !important; */
+  word-spacing: 1px;
+}
+
+/* LOGO ANIMÉ */
+#transition-wrapper #logo #c {
+	stroke-width: 1px;
+	stroke: #f9f5f3;
+}
+</style>
+<script>
+	import gsap from "gsap";
+	const modal = document.querySelector<HTMLElement>(".modal-menu");
+	const isDesktopVersion = window.innerWidth >= 1024;
+
+	// Si le hero a déjà été joué, ajoute la classe qui permet de scroll directement après la transition
+	if (sessionStorage.getItem("heroPlayed") === "true") {
+		const body = document.querySelector<HTMLElement>("body");
+		body.classList.add("direct-scroll-enable");
+	}
+
+	// TRANSITION DE PAGE
+	let tlEnter = gsap.timeline({});
+	let tlExit = gsap.timeline({});
+
+	// Fonction pour naviguer vers une nouvelle URL
+	const navigateTo = (url) => {
+		window.location.href = url;
+	};
+
+	// Animation de sortie
+	const pageExit = async () => {
+		// Diminuer l'opacité de la modale
+		if (modal.classList.contains("active") && isDesktopVersion) {
+			modal.style.transition = "opacity 0.5s";
+			modal.style.opacity = "0";
+		}
+		// Faire descendre le conteneur
+		return tlExit.to("#transition-wrapper", {
+			translateY: 0,
+			duration: 0.8,
+			ease: "power1.inOut"
+		});
+	};
+
+	// Animation d'entrée / logo
+	const pageEnter = async () => {
+		return tlEnter
+			.to(".direct-scroll-enable", { overflow: "hidden" })
+			.to("#transition-wrapper #logo", { opacity: 1, duration: 0.7, delay: 0.2 }, "<")
+			.fromTo("#transition-wrapper #logo #c", { fill: "#f9f5f300" }, { fill: "#f9f5f3", duration: 0.85 })
+			.fromTo("#transition-wrapper #logo #m", { opacity: 0 }, { opacity: 1, duration: 0.85 }, "<")
+			.fromTo("#transition-wrapper #logo #point", { opacity: 0 }, { opacity: 1, duration: 0.85 })
+			.to("#transition-wrapper", { translateY: "-100%", duration: 0.8, ease: "power1.inOut" })
+			.to(".direct-scroll-enable", { overflow: "visible" })
+			.to("#transition-wrapper #logo", { opacity: 0 });
+	};
+
+	// Gestion du clic sur les liens et des animations
+	const setupTransitions = () => {
+		// Récupérer les liens qui nécessitent un changement de page (pas des ancres)
+		const links = document.querySelectorAll("a.nav");
+
+		links.forEach((link) => {
+			link.addEventListener("click", async (event) => {
+				event.preventDefault(); // Empêcher le comportement par défaut au clic
+
+				const href = link.getAttribute("href"); // Récupération de l'URL pour rediriger
+
+				// Lancement de l'animation de sortie
+				await pageExit();
+
+				// Changement de page
+				navigateTo(href);
+			});
+		});
+
+		// Lancement de l'animation d'entrée
+		pageEnter();
+	};
+
+	// Initialiser la fonction
+	setupTransitions();
+</script>

@@ -1,0 +1,18 @@
+---
+interface Props {
+	url: string;
+	text: string;
+	additionalClass?: string;
+	isExternalLink?: boolean;
+}
+
+const { url = "#", text = "Découvrir", additionalClass, isExternalLink = false } = Astro.props;
+---
+
+<div class=`btn cursor-pointer block w-fit relative ${additionalClass}`>
+	<a
+		target={isExternalLink ? "_blank" : "_self"}
+		class="relative z-20 font-bebas text-2xl uppercase transition-colors hover:text-firefly-500 lg:text-firefly-900"
+		href={url}>{text}</a
+	>
+</div>

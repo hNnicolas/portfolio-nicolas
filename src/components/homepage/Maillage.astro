@@ -1,0 +1,147 @@
+---
+interface Props {
+	text: string;
+	link: string;
+}
+
+const { text, link } = Astro.props;
+---
+
+<section class="maillage relative flex h-fit w-full flex-col items-center bg-firefly-900 py-10 lg:py-24">
+	<a href={link} aria-labelledby="link-description" class="nav absolute left-0 top-0 z-10 h-full w-full lg:cursor-none"></a>
+	<div class="marquee pointer-events-none flex w-full flex-row flex-nowrap overflow-hidden py-2 sm:py-3 lg:py-3 xl:py-5">
+		<ul class="marquee-right flex flex-row flex-nowrap space-x-6 px-3 md:space-x-14 md:px-7">
+			<li id="link-description" class="text-outline font-bebas">{text}</li>
+			<li class="font-zenloop">{text}</li>
+			<li class="font-nothing capitalize">{text}</li>
+		</ul>
+		<ul class="marquee-right-bis flex flex-row flex-nowrap space-x-6 px-3 md:space-x-14 md:px-7">
+			<li class="text-outline font-bebas">{text}</li>
+			<li class="font-zenloop">{text}</li>
+			<li class="font-nothing capitalize">{text}</li>
+		</ul>
+	</div>
+	<div class="marquee pointer-events-none flex w-full flex-row flex-nowrap overflow-hidden py-2 sm:py-3 xl:py-5">
+		<ul class="marquee-left flex flex-row flex-nowrap space-x-6 px-3 md:space-x-14 md:px-7">
+			<li class="font-primary capitalize">{text}</li>
+			<li class="font-sixcaps uppercase">{text}</li>
+			<li class="text-outline font-abril lowercase">{text}</li>
+		</ul>
+		<ul class="marquee-left-bis flex flex-row flex-nowrap space-x-6 px-3 md:space-x-14 md:px-7">
+			<li class="font-primary capitalize">{text}</li>
+			<li class="font-sixcaps uppercase">{text}</li>
+			<li class="text-outline font-abril lowercase">{text}</li>
+		</ul>
+	</div>
+	<div
+		class="cursor-discover pointer-events-none hidden lg:absolute lg:left-0 lg:top-0 lg:z-10 lg:flex lg:h-[110px] lg:w-[110px] lg:items-center lg:justify-center lg:rounded-full lg:bg-fantasy-50 lg:p-[25px] lg:opacity-0"
+	>
+		<span class="font-bebas text-xl uppercase text-firefly-900">Découvrir</span>
+	</div>
+</section>
+<style lang="postcss">
+	/* STYLES DES TEXTES */
+	.text-outline {
+		-webkit-text-stroke-width: 1px;
+  		-webkit-text-stroke-color: #f9F5F3;
+  		color: transparent !important;
+	}
+
+	.marquee ul li {
+		@apply text-5xl sm:text-6xl md:text-7xl xl:text-8xl leading-snug
+	}
+
+	/* DÉFILEMENT INFINI */
+	.maillage li {
+		white-space: nowrap;
+		@apply text-fantasy-50 w-fit inline-block;
+	}
+
+	.marquee {
+		white-space: nowrap;
+	}
+
+	.marquee-left {
+		animation: scroll-left 40s -20s linear infinite;
+	}
+	.marquee-left-bis {
+		animation: scroll-left-bis 40s linear infinite;
+	}
+
+	@keyframes scroll-left {
+		from {
+			transform: translateX(100%);
+		}
+		to {
+			transform: translateX(-100%);
+		}
+	}
+	@keyframes scroll-left-bis {
+		from {
+			transform: translateX(0);
+		}
+		to {
+			transform: translateX(-200%);
+		}
+	}
+
+	.marquee-right {
+		animation: scroll-right 40s -20s linear infinite;
+	}
+	.marquee-right-bis {
+		animation: scroll-right-bis 40s linear infinite;
+	}
+
+	@keyframes scroll-right {
+		from {
+			transform: translateX(-100%);
+		}
+		to {
+			transform: translateX(100%);
+		}
+	}
+	@keyframes scroll-right-bis {
+		from {
+			transform: translateX(-200%);
+		}
+		to {
+			transform: translateX(0);
+		}
+	}
+</style>
+<script>
+	import gsap from "gsap";
+	import { ScrollTrigger } from "gsap/src/ScrollTrigger";
+	gsap.registerPlugin(ScrollTrigger);
+	let mmDesktop = gsap.matchMedia();
+	mmDesktop.add("(min-width: 1024px)", () => {
+		// Cursor animation
+		const maillageSection = document.querySelector<HTMLElement>(".maillage");
+		const cursorDiscover = document.querySelector(".cursor-discover");
+
+		// Afficher le curseur à l'entrée sur le conteneur
+		maillageSection.addEventListener("mouseenter", () => {
+			gsap.to(cursorDiscover, { opacity: 1, duration: 0.3 });
+		});
+
+		// Cacher le curseur à la sortie du conteneur
+		maillageSection.addEventListener("mouseleave", () => {
+			gsap.to(cursorDiscover, { opacity: 0, duration: 0.3 });
+		});
+
+		// Suivi du curseur au déplacement
+		maillageSection.addEventListener("mousemove", (e) => {
+			const offsetX = e.clientX - maillageSection.getBoundingClientRect().left;
+			const offsetY = e.clientY - maillageSection.getBoundingClientRect().top;
+
+			if (cursorDiscover) {
+				gsap.to(cursorDiscover, {
+					x: offsetX - cursorDiscover.clientWidth / 2,
+					y: offsetY - cursorDiscover.clientHeight / 2,
+					ease: "power3.out",
+					duration: 0.2
+				});
+			}
+		});
+	});
+</script>

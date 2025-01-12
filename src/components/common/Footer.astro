@@ -1,0 +1,68 @@
+---
+interface Props {
+	textureFooter: boolean;
+}
+
+const { textureFooter } = Astro.props;
+---
+
+<footer id="contact" class={`flex h-screen flex-col justify-end bg-fantasy-50 ${textureFooter ? "bg-texture" : " "}`}>
+	<div class="flex h-4/5 flex-col justify-end bg-firefly-900 lg:h-2/3">
+		<div
+			class="flex h-full flex-col flex-nowrap items-center justify-start p-6 pt-14 lg:flex-row lg:justify-between lg:pl-20 lg:pr-40 lg:pt-6"
+		>
+			<a aria-label="Aller sur la page d'accueil" href="/">
+    <img class="logo w-40 opacity-5 md:w-48 lg:w-56" 
+         src="https://res.cloudinary.com/dlhnbkqf9/image/upload/v1736712956/Nicolas_3_nmqmft.png" 
+         alt="Logo de Nicolas HUANG" />
+		</a>
+
+
+			<div class="mt-[20vh] space-y-12 overflow-hidden text-fantasy-50 lg:mt-0">
+				<div class="link -translate-x-full space-y-4">
+					<p class="font-semibold uppercase">Me retrouver sur</p>
+
+					<ul class="space-y-4 text-fantasy-50">
+						<li class="text-center lg:text-start">
+							<a
+								class="uppercase transition-colors hover:text-firefly-500"
+								href="https://github.com/hNnicolas"
+								target="_blank">github</a
+							>
+						</li>
+						<li class="text-center lg:text-start">
+							<a
+								class="uppercase transition-colors hover:text-firefly-500"
+								href="https://www.linkedin.com/in/huang-nicolas/"
+								target="_blank">linkedin</a
+							>
+						</li>
+					</ul>
+				</div>
+				<a
+					class="link inline-block w-full -translate-x-full text-center uppercase transition-colors hover:text-firefly-500 lg:w-fit"
+					href="mailto:huang.nicola@gmail.com">Me contacter</a
+				>
+			</div>
+		</div>
+		<div class="more-info relative flex h-20 w-full flex-col items-center justify-center">
+			<div class="absolute left-0 top-0 h-[1px] w-0 justify-self-start bg-fantasy-50"></div>
+			<p class="text-center text-sm text-fantasy-50 opacity-0">© Made by Nicolas HUANG - 2025</p>
+		</div>
+	</div>
+</footer>
+<script>
+	import gsap from "gsap";
+	import { ScrollTrigger } from "gsap/ScrollTrigger";
+	gsap.registerPlugin(ScrollTrigger);
+	let tl = gsap.timeline({
+		scrollTrigger: {
+			trigger: "#contact",
+			start: "top 5%"
+		}
+	});
+	tl.to("#contact .logo", { opacity: 1, duration: 1 });
+	tl.to("#contact .more-info div", { width: "100%", duration: 1 }, "-=0.5");
+	tl.to("#contact .more-info p", { opacity: 1, duration: 0.5 });
+	tl.to("#contact .link", { translateX: 0, duration: 1 });
+</script>

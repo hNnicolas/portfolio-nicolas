@@ -1,0 +1,40 @@
+---
+import Layout from "../layouts/Layout.astro";
+import Listing from "../components/projects/Listing.astro";
+import Banner from "../components/common/Banner.astro";
+import listingProjects from "../../src/datas/projects.json";
+
+const title = "Projets Web | Portfolio Nicolas HUANG - Développeur Front-End";
+const metaDescription =
+	"Parcourez une collection variée de projets web, réalisés dans le cadre de mes études ou en entreprise, illustrant mon apprentissage et ma technique.";
+
+const menuLinks = [
+	{
+		text: "accueil",
+		url: "/",
+		transition: true
+	},
+	{
+		text: "projets",
+		url: "/projets",
+		transition: true
+	},
+	{
+		text: "à propos",
+		url: "/#a-propos",
+		transition: true
+	},
+	{
+		text: "contact",
+		url: "#contact",
+		transition: false
+	}
+];
+---
+
+<Layout menuLinks={menuLinks} title={title} textureFooter={true} metaDescription={metaDescription}>
+	<main class="bg-fantasy-50 bg-texture">
+		<Banner title="projets" h1="Mes réalisations Web" />
+		<Listing data={listingProjects} />
+	</main>
+</Layout>

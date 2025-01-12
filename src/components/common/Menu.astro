@@ -1,0 +1,79 @@
+---
+const { menuLinks } = Astro.props;
+---
+
+<div>
+	<div
+		class="modal-menu fixed bottom-0 right-0 top-0 z-50 flex h-dvh w-full flex-col items-start justify-between bg-firefly-500 pb-6 pl-6 pr-2 pt-2 lg:bottom-6 lg:right-6 lg:top-6 lg:w-1/2 lg:flex-col-reverse lg:rounded-3xl lg:px-5 lg:pb-5 lg:pt-12 xl:w-2/5 2xl:w-1/3"
+	>
+		<div
+			class="close-modal group flex h-11 w-24 items-center justify-center self-end rounded-full bg-fantasy-50 lg:h-[75px] lg:min-h-[75px] lg:w-[75px] lg:cursor-pointer lg:transition-colors lg:hover:bg-firefly-900"
+		>
+			<span class="text-xl text-firefly-900 lg:group-hover:text-fantasy-50">fermer</span>
+		</div>
+		<ul class="mt-20 space-y-3 lg:space-y-6 lg:pl-7">
+			{
+				menuLinks.map((link) => (
+					<li>
+						<a
+							class={`link w-fit text-4xl uppercase leading-normal text-fantasy-50 transition-colors hover:text-firefly-900 lg:text-6xl ${link.transition ? "nav" : "anchor"}`}
+							href={link.url}
+						>
+							{link.text}
+						</a>
+					</li>
+				))
+			}
+		</ul>
+<img class="mx-auto w-40 md:w-48" 
+     src="https://res.cloudinary.com/dlhnbkqf9/image/upload/v1736713831/Nicolas_4_exy42v.png" 
+     alt="Logo de Nicolas HUANG" />
+
+	</div>
+	<div class="fixed-menu fixed z-30 flex w-full justify-end px-3 py-2 lg:bottom-7 lg:right-7 lg:h-fit lg:w-fit lg:p-0">
+		<div
+			class="circle flex h-11 w-24 items-center justify-center rounded-full border-2 border-fantasy-50 bg-firefly-900 lg:h-[75px] lg:w-[75px] lg:cursor-pointer lg:transition-colors lg:hover:bg-firefly-500"
+		>
+			<span class="text-xl text-fantasy-50">menu</span>
+		</div>
+	</div>
+</div>
+
+<style is:global lang="postcss">
+/* MODALE */
+.modal-menu {
+  transform: translateX(calc(100% + 2rem));
+  transition: transform 1.25s;
+}
+
+.modal-menu.active {
+  transform: translateX(0);
+}
+
+@media screen and (min-width: 1024px) {
+  .modal-menu {
+    height: calc(100vh - 3rem);
+  }
+}
+</style>
+
+<script>
+	const btnMenu = document.querySelector(".fixed-menu .circle");
+	const modal = document.querySelector(".modal-menu");
+	const btnClose = document.querySelector(".close-modal");
+	const anchors = document.querySelectorAll("a.anchor");
+	btnMenu.addEventListener("click", () => {
+		modal.classList.add("active");
+	});
+
+	btnClose.addEventListener("click", () => {
+		modal.classList.remove("active");
+	});
+
+	// Fermer le menu au clic sur les ancres
+	anchors.forEach((anchor) => {
+		anchor.addEventListener("click", () => {
+			modal.classList.remove("active");
+		});
+	});
+</script>

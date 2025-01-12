@@ -1,0 +1,37 @@
+---
+import Layout from "../layouts/Layout.astro";
+import Button from "../components/common/Button.astro";
+const title = "Page non trouvée | Mélanie Casu Portfolio";
+const metaDescription = "Désolé, la page que vous recherchez est introuvable. Retournez sur la page d'accueil.";
+const menuLinks = [
+	{
+		text: "accueil",
+		url: "/",
+		transition: true
+	},
+	{
+		text: "projets",
+		url: "/projets",
+		transition: true
+	},
+	{
+		text: "à propos",
+		url: "/#a-propos",
+		transition: true
+	},
+	{
+		text: "contact",
+		url: "/#contact",
+		transition: true
+	}
+];
+---
+
+<Layout title={title} menuLinks={menuLinks} textureFooter={false} metaDescription={metaDescription}>
+	<main>
+		<section class="flex h-[50vh] flex-col items-center justify-center bg-fantasy-50">
+			<p>Désolé, cette page n'existe pas !</p>
+			<Button url="/" text="Retourner sur la page d'accueil" />
+		</section>
+	</main>
+</Layout>
