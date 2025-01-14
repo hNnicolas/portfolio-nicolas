@@ -24,12 +24,22 @@ const { menuLinks } = Astro.props;
 					</li>
 				))
 			}
+			{/* Lien pour télécharger le CV */}
+			<li>
+				<a
+					class="link w-fit text-4xl uppercase leading-normal text-fantasy-50 transition-colors hover:text-firefly-900 lg:text-6xl"
+					href="/CV_Nicolas_HUANG.pdf"
+					download="CV_Nicolas_HUANG.pdf"
+				>
+					Télécharger mon CV
+				</a>
+			</li>
 		</ul>
-<img class="mx-auto w-40 md:w-48" 
-     src="https://res.cloudinary.com/dlhnbkqf9/image/upload/v1736713831/Nicolas_4_exy42v.png" 
-     alt="Logo de Nicolas HUANG" />
-
+		<img class="mx-auto w-40 md:w-48" 
+			src="https://res.cloudinary.com/dlhnbkqf9/image/upload/v1736713831/Nicolas_4_exy42v.png" 
+			alt="Logo de Nicolas HUANG" />
 	</div>
+
 	<div class="fixed-menu fixed z-30 flex w-full justify-end px-3 py-2 lg:bottom-7 lg:right-7 lg:h-fit lg:w-fit lg:p-0">
 		<div
 			class="circle flex h-11 w-24 items-center justify-center rounded-full border-2 border-fantasy-50 bg-firefly-900 lg:h-[75px] lg:w-[75px] lg:cursor-pointer lg:transition-colors lg:hover:bg-firefly-500"
@@ -62,6 +72,7 @@ const { menuLinks } = Astro.props;
 	const modal = document.querySelector(".modal-menu");
 	const btnClose = document.querySelector(".close-modal");
 	const anchors = document.querySelectorAll("a.anchor");
+
 	btnMenu.addEventListener("click", () => {
 		modal.classList.add("active");
 	});
