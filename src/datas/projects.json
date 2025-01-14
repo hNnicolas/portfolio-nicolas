@@ -15,6 +15,21 @@
 		}
 	},
 	{
+		"name": "GoGreen",
+		"link": "https://letsgo-green.netlify.app/",
+		"type": "Perso",
+		"year": 2024,
+		"description": "Un site pour sensibilisé les utilisateurs sur l'environnement et la présevation de la planète.",
+		"image": {
+			"src": "/projets/gogreen.webp",
+			"alt": "Capture d'écran du site letsgogreen avec un design moderne"
+		},
+		"imageMobile": {
+			"src": "/projets/gogreen-mobile.webp",
+			"alt": "Capture d'écran du site letsgogreen avec un design moderne"
+		}
+	},
+	{
 		"name": "Template",
 		"link": "https://animated-template-site.netlify.app/",
 		"type": "Perso",
