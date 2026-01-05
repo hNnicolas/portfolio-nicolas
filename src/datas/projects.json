@@ -1,5 +1,20 @@
 [
 	{
+		"name": "NewsFoundry",
+		"link": "https://p14-news-foundry-frontend.vercel.app/",
+		"type": "Ecole",
+		"year": 2026,
+		"description": "NewsFoundry est une application web basée sur l’intelligence artificielle permettant aux utilisateurs de dialoguer, rechercher des articles et générer des revues de presse",
+		"image": {
+			"src": "/projets/newsfoundry.png",
+			"alt": "Capture d'écran du site de la page d'accueil deNewsFoundry "
+		},
+		"imageMobile": {
+			"src": "/projets/newsfoundry-mobile.webp",
+			"alt": "Capture d'écran du site web de la page d'accueil au format mobile de NewsFoundry"
+		}
+	},
+	{
 		"name": "Norway",
 		"link": "https://norway-trip.netlify.app/",
 		"type": "Perso",
