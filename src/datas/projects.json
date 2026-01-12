@@ -7,12 +7,29 @@
 		"description": "NewsFoundry est une application web basée sur l’intelligence artificielle permettant aux utilisateurs de dialoguer, rechercher des articles et générer des revues de presse",
 		"image": {
 			"src": "/projets/newsfoundry.png",
-			"alt": "Capture d'écran du site de la page d'accueil deNewsFoundry "
+			"alt": "Capture d'écran du site de la page d'accueil de NewsFoundry "
 		},
 		"imageMobile": {
 			"src": "/projets/newsfoundry-mobile.webp",
 			"alt": "Capture d'écran du site web de la page d'accueil au format mobile de NewsFoundry"
-		}
+		},
+		"technologies": "React, Next.js, Tailwind CSS, Node.js, Express, Python, OpenAI API, PostgreSQL"
+	},
+	{
+		"name": "Les petits plats",
+		"link": "https://p5-lespetits-plats.netlify.app/",
+		"type": "Ecole",
+		"year": 2025,
+		"description": "Ce projet a pour objectif de créer une application web dynamique pour afficher et rechercher des recettes de cuisine. Les utilisateurs peuvent consulter les recettes, effectuer une recherche par mots-clés, ou affiner leur recherche à l’aide de filtres comme les ingrédients, ustensiles ou appareils",
+		"image": {
+			"src": "/projets/lespetitsplats.png",
+			"alt": "Capture d'écran du site de la page d'accueil de Les petits plats"
+		},
+		"imageMobile": {
+			"src": "/projets/lespetitsplats-mobile.png",
+			"alt": "Capture d'écran du site web de la page d'accueil au format mobile de Les petits plats"
+		},
+		"technologies": "HTML, CSS, React, Next.js, Sass"
 	},
 	{
 		"name": "Norway",
@@ -27,7 +44,24 @@
 		"imageMobile": {
 			"src": "/projets/norway-mobile.webp",
 			"alt": "Capture d'écran du site web de Norway avec un design moderne"
-		}
+		},
+		"technologies": "HTML, CSS, JavaScript"
+	},
+	{
+		"name": "Haunted House",
+		"link": "https://haunted-house-ghost.vercel.app/",
+		"type": "Perso",
+		"year": 2024,
+		"description": "Animation 3D d'une maison hantée ",
+		"image": {
+			"src": "/projets/hauntedhouse.png",
+			"alt": "Capture d'écran du site web de haunted house"
+		},
+		"imageMobile": {
+			"src": "/projets/hauntedhouse-mobile.png",
+			"alt": "Capture d'écran du site web de haunted house"
+		},
+		"technologies": "WebGL, Three.JS, JavaScript"
 	},
 	{
 		"name": "GoGreen",
@@ -57,7 +91,8 @@
 		"imageMobile": {
 			"src": "/projets/template-mobile.webp",
 			"alt": "Capture d'écran d'un template avec un design moderne"
-		}
+		},
+		"technologies": "HTML, CSS, JavaScript"
 	},
 	{
 		"name": "Freshly Restaurant",
@@ -72,7 +107,8 @@
 		"imageMobile": {
 			"src": "/projets/freshlyrestaurant-mobile.webp",
 			"alt": "Capture d'écran du site web de Freshly restaurant avec un design moderne et coloré"
-		}
+		},
+		"technologies": "HTML, CSS, JavaScript"
 	},
 	{
 		"name": "Insta link",
@@ -87,7 +123,8 @@
 		"imageMobile": {
 			"src": "/projets/instalink-mobile.webp",
 			"alt": "Capture d'écran du site web du instalink avec un design élégant et raffiné"
-		}
+		},
+		"technologies": "HTML, CSS, JavaScript"
 	},
 	{
 		"name": "OhMyFood",
