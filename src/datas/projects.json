@@ -10,7 +10,7 @@
 			"alt": "Capture d'écran du site de la page d'accueil de NewsFoundry "
 		},
 		"imageMobile": {
-			"src": "/projets/newsfoundry-mobile.webp",
+			"src": "/projets/newsfoundry-mobile.png",
 			"alt": "Capture d'écran du site web de la page d'accueil au format mobile de NewsFoundry"
 		},
 		"technologies": "React, Next.js, Tailwind CSS, Node.js, Express, Python, OpenAI API, PostgreSQL"
@@ -60,6 +60,22 @@
 		"imageMobile": {
 			"src": "/projets/hauntedhouse-mobile.png",
 			"alt": "Capture d'écran du site web de haunted house"
+		},
+		"technologies": "WebGL, Three.JS, JavaScript"
+	},
+	{
+		"name": "Japan Scenary",
+		"link": "https://japan-scenary.netlify.app/",
+		"type": "Perso",
+		"year": 2024,
+		"description": "Gallery d'image 3D d'un voyage au Japon",
+		"image": {
+			"src": "/projets/japanscenary.png",
+			"alt": "Capture d'écran du site web de Japan scenary"
+		},
+		"imageMobile": {
+			"src": "/projets/japanscenary-mobile.png",
+			"alt": "Capture d'écran du site web de Japan scenary"
 		},
 		"technologies": "WebGL, Three.JS, JavaScript"
 	},
