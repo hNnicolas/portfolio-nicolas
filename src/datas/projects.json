@@ -143,33 +143,17 @@
 		"technologies": "HTML, CSS, JavaScript"
 	},
 	{
-		"name": "Insta link",
-		"link": "https://cloud-insta-link.netlify.app/",
-		"type": "Perso",
-		"year": 2024,
-		"description": "Développement d'un site web moderne et animé pour développer le réseau instagram",
-		"image": {
-			"src": "/projets/instalink.webp",
-			"alt": "Capture d'écran du site web du instalink avec un design élégant et raffiné"
-		},
-		"imageMobile": {
-			"src": "/projets/instalink-mobile.webp",
-			"alt": "Capture d'écran du site web du instalink avec un design élégant et raffiné"
-		},
-		"technologies": "HTML, CSS, JavaScript"
-	},
-	{
 		"name": "OhMyFood",
 		"link": "https://p5-ohmyfood.netlify.app/",
 		"type": "Ecole",
 		"year": 2024,
 		"description": "Intégrer une maquette en mobile-first et implémenter des animations avec SASS, sur la base d'une maquette Figma.",
 		"image": {
-			"src": "/projets/ohmyfood.webp",
+			"src": "/projets/ohmyfood.png",
 			"alt": "Capture d'écran du site web Ohmyfood avec un design coloré et vue sur une carte de restaurant"
 		},
 		"imageMobile": {
-			"src": "/projets/ohmyfood-mobile.webp",
+			"src": "/projets/ohmyfood-mobile.png",
 			"alt": "Capture d'écran du site web Ohmyfood avec un design coloré et vue sur une carte de restaurant"
 		},
 		"technologies": "React, NextJs"
