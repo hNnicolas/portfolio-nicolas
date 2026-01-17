@@ -80,6 +80,22 @@
 		"technologies": "WebGL, Three.JS, JavaScript"
 	},
 	{
+		"name": "Marbleball game 3D",
+		"link": "https://marbleballgame.netlify.app/",
+		"type": "Perso",
+		"year": 2024,
+		"description": "marbleball game en 3D, pour le fun",
+		"image": {
+			"src": "/projets/marbleball.png",
+			"alt": "Capture d'écran du site web de Marbleball"
+		},
+		"imageMobile": {
+			"src": "/projets/marbleball-mobile.png",
+			"alt": "Capture d'écran du site web de Marbleball"
+		},
+		"technologies": "WebGL, Three.JS, JavaScript"
+	},
+	{
 		"name": "GoGreen",
 		"link": "https://letsgo-green.netlify.app/",
 		"type": "Perso",
@@ -144,7 +160,7 @@
 	},
 	{
 		"name": "OhMyFood",
-		"link": "https://github.com/hNnicolas/ohmyfood",
+		"link": "https://p5-ohmyfood.netlify.app/",
 		"type": "Ecole",
 		"year": 2024,
 		"description": "Intégrer une maquette en mobile-first et implémenter des animations avec SASS, sur la base d'une maquette Figma.",
@@ -156,7 +172,7 @@
 			"src": "/projets/ohmyfood-mobile.webp",
 			"alt": "Capture d'écran du site web Ohmyfood avec un design coloré et vue sur une carte de restaurant"
 		},
-		"technologies": "HTML, Sass"
+		"technologies": "React, NextJs"
 	},
 	{
 		"name": "Kasa",

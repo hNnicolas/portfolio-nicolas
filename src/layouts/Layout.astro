@@ -131,7 +131,7 @@ body * {
 		// Faire descendre le conteneur
 		return tlExit.to("#transition-wrapper", {
 			translateY: 0,
-			duration: 0.8,
+			duration: 0.5,
 			ease: "power1.inOut"
 		});
 	};
@@ -140,7 +140,7 @@ body * {
 	const pageEnter = async () => {
 		return tlEnter
 			.to(".direct-scroll-enable", { overflow: "hidden" })
-			.to("#transition-wrapper #logo", { opacity: 1, duration: 0.3, delay: 0.2 }, "<")
+			.to("#transition-wrapper #logo", { opacity: 1, duration: 0.2, delay: 0.2 }, "<")
 			.fromTo("#transition-wrapper #logo #c", { fill: "#f9f5f300" }, { fill: "#f9f5f3", duration: 0.85 })
 			.fromTo("#transition-wrapper #logo #m", { opacity: 0 }, { opacity: 1, duration: 0.85 }, "<")
 			.fromTo("#transition-wrapper #logo #point", { opacity: 0 }, { opacity: 1, duration: 0.85 })
